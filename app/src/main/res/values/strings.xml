@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">My Store</string>
+    <string name="loginTvLoginTitle">Inicio de sesión</string>
+    <string name="loginTilUsername">Nombre de usuario</string>
+</resources>
