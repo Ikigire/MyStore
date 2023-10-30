@@ -28,7 +28,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvAppName"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:lottie_rawRes="@raw/animation_store"
+            app:lottie_rawRes="@raw/animation_splash"
             app:lottie_autoPlay="true"
     />
 
