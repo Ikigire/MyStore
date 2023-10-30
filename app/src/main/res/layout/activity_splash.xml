@@ -30,7 +30,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:lottie_rawRes="@raw/animation_store"
             app:lottie_autoPlay="true"
-            app:lottie_loop="true"
     />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
