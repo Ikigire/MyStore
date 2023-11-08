@@ -9,12 +9,12 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/loginBoxHeader"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/loginBoxLoginForm"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/loginBoxLoginForm"
+        app:layout_constraintBottom_toTopOf="@id/loginBoxDivider"
         >
             <TextView
                     android:id="@+id/loginTvLoginTitle"
@@ -44,15 +44,15 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/loginBoxLoginForm"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_marginHorizontal="16dp"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@id/loginBoxHeader"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/loginBoxHeader"
-            app:layout_constraintBottom_toTopOf="@id/loginBoxDivider"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             >
-            <com.google.android.material.textfield.TextInputLayout
+        <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/loginTilUsername"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -109,11 +109,11 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/loginBoxDivider"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/loginBoxLoginForm"
+            app:layout_constraintEnd_toStartOf="@id/loginBoxLoginForm"
+            app:layout_constraintTop_toBottomOf="@id/loginBoxHeader"
             app:layout_constraintBottom_toTopOf="@id/loginBoxLinks"
             >
 
@@ -154,10 +154,10 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/loginBoxLinks"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/loginBoxLoginForm"
             app:layout_constraintTop_toBottomOf="@id/loginBoxDivider"
             app:layout_constraintBottom_toBottomOf="parent"
             >

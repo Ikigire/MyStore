@@ -5,6 +5,154 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        app:layout_scrollFlags="scroll"
+        android:scrollbars="vertical"
         tools:context=".products.addproduct.AddProductActivity">
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:paddingHorizontal="14dp"
+	>
+
+		<androidx.constraintlayout.widget.ConstraintLayout
+				android:id="@+id/addProductBoxHeader"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintBottom_toTopOf="@id/addProductBoxForm"
+		>
+
+			<TextView
+					android:id="@+id/addProductTvTitulo"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:textSize="32sp"
+					android:textStyle="bold"
+					android:text="@string/addProductTvTitulo"
+					android:layout_marginBottom="8dp"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintEnd_toEndOf="parent"
+					app:layout_constraintTop_toTopOf="parent"
+					app:layout_constraintBottom_toTopOf="@id/addProductSivProductImg"
+			/>
+
+			<com.google.android.material.imageview.ShapeableImageView
+					android:id="@+id/addProductSivProductImg"
+					android:layout_width="200dp"
+					android:layout_height="200dp"
+					app:strokeColor="?android:attr/colorPrimary"
+					app:strokeWidth="2dp"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintEnd_toEndOf="parent"
+					app:layout_constraintTop_toBottomOf="@id/addProductTvTitulo"
+					app:layout_constraintBottom_toBottomOf="parent"
+			/>
+
+		</androidx.constraintlayout.widget.ConstraintLayout>
+
+		<androidx.constraintlayout.widget.ConstraintLayout
+				android:id="@+id/addProductBoxForm"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintTop_toBottomOf="@id/addProductBoxHeader"
+				app:layout_constraintBottom_toBottomOf="parent"
+		>
+
+			<com.google.android.material.textfield.TextInputLayout
+					android:id="@+id/addProductTilName"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:hint="@string/addProductTilNameHint"
+					app:endIconMode="clear_text"
+					android:layout_marginBottom="8dp"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintEnd_toEndOf="parent"
+					app:layout_constraintTop_toTopOf="parent"
+					app:layout_constraintBottom_toTopOf="@id/addProductTilDescription"
+			>
+				<com.google.android.material.textfield.TextInputEditText
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:inputType="text"
+				/>
+			</com.google.android.material.textfield.TextInputLayout>
+
+			<com.google.android.material.textfield.TextInputLayout
+					android:id="@+id/addProductTilDescription"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:hint="@string/addProductTilTilDescriptionHint"
+					app:endIconMode="clear_text"
+					android:layout_marginBottom="8dp"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintEnd_toEndOf="parent"
+					app:layout_constraintTop_toBottomOf="@id/addProductTilName"
+					app:layout_constraintBottom_toTopOf="@id/addProductTilExistences"
+			>
+				<com.google.android.material.textfield.TextInputEditText
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:lines="3"
+						android:inputType="textMultiLine"
+				/>
+			</com.google.android.material.textfield.TextInputLayout>
+
+			<com.google.android.material.textfield.TextInputLayout
+					android:id="@+id/addProductTilExistences"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:hint="@string/addProductTilExistencesHint"
+					app:endIconMode="clear_text"
+					android:layout_marginBottom="8dp"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintEnd_toEndOf="parent"
+					app:layout_constraintTop_toBottomOf="@id/addProductTilDescription"
+					app:layout_constraintBottom_toTopOf="@id/addProductTilPrice"
+			>
+				<com.google.android.material.textfield.TextInputEditText
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:inputType="number"
+				/>
+			</com.google.android.material.textfield.TextInputLayout>
+
+			<com.google.android.material.textfield.TextInputLayout
+					android:id="@+id/addProductTilPrice"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:hint="@string/addProductTilPriceHint"
+					app:endIconMode="clear_text"
+					android:layout_marginBottom="8dp"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintEnd_toEndOf="parent"
+					app:layout_constraintTop_toBottomOf="@id/addProductTilExistences"
+					app:layout_constraintBottom_toTopOf="@id/addProductBtnRegistrar"
+			>
+				<com.google.android.material.textfield.TextInputEditText
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:inputType="numberDecimal"
+				/>
+			</com.google.android.material.textfield.TextInputLayout>
+
+			<Button
+					android:id="@+id/addProductBtnRegistrar"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="@string/addProductBtnRegistrar"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintEnd_toEndOf="parent"
+					app:layout_constraintTop_toBottomOf="@id/addProductTilPrice"
+					app:layout_constraintBottom_toBottomOf="parent"
+			/>
+
+		</androidx.constraintlayout.widget.ConstraintLayout>
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

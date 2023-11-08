@@ -7,4 +7,21 @@
     <string name="loginTvNoTienesCuenta">¿No Tienes Cuenta?</string>
     <string name="loginTvRegistrate">Registrate aquí</string>
     <string name="loginTilPassword">Contraseña</string>
+	<string name="registerTvTitulo">Regístrate</string>
+    <string name="registerTilFullnameHint">Nombre completo o apodo</string>
+    <string name="registerBtnRegistrar">Registrar</string>
+    <string name="registerTvYaTienesCuenta">¿Ya tienes cuenta?</string>
+    <string name="registerTvIniciarSesion">Inicia sesión aquí</string>
+	
+    <string name="addProductTvTitulo">Agregar Producto</string>
+    <string name="addProductTilNameHint">Nombre</string>
+    <string name="addProductTilTilDescriptionHint">Descripción</string>
+    <string name="addProductTilExistencesHint">Existencias</string>
+    <string name="addProductTilPriceHint">Precio</string>
+    <string name="addProductBtnRegistrar">Guardar</string>
+	
+    <string name="productListAlertDialogTitle">¿Qué desea hacer?</string>
+    <string name="productListAlertDialogMessage">Está a punto de abandonar este lugar.\nSeleccione una opción.</string>
+    <string name="productListAlertDialogNegativeButton">Cerrar sesión</string>
+    <string name="productListAlertDialogPositiveButton">Cerrar app</string>
 </resources>

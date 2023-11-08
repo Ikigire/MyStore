@@ -7,4 +7,45 @@
         android:layout_height="match_parent"
         tools:context=".products.productlist.ProductListActivity">
 
+	<androidx.appcompat.widget.Toolbar
+			android:id="@+id/productListToolbar"
+			android:layout_width="match_parent"
+			android:layout_height="?attr/actionBarSize"
+			android:layout_marginHorizontal="14dp"
+			android:layout_marginVertical="8dp"
+			android:background="?android:attr/colorPrimary"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintBottom_toTopOf="@id/productListListview"
+	/>
+
+	<ListView
+			android:id="@+id/productListListview"
+			android:layout_width="match_parent"
+			android:layout_height="0dp"
+			android:scrollbars="vertical"
+			android:divider="@android:color/transparent"
+			android:dividerHeight="8dp"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintTop_toBottomOf="@id/productListToolbar"
+			app:layout_constraintBottom_toBottomOf="parent"
+	/>
+
+	<com.google.android.material.floatingactionbutton.FloatingActionButton
+			android:id="@+id/productListFabAdd"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:clickable="true"
+			android:focusable="true"
+			android:background="?android:attr/colorPrimary"
+			android:src="@android:drawable/ic_input_add"
+			android:layout_marginBottom="14dp"
+			android:layout_marginEnd="14dp"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintBottom_toBottomOf="parent"
+			/>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

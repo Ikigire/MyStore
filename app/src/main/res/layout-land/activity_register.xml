@@ -9,12 +9,12 @@
 
 	<androidx.constraintlayout.widget.ConstraintLayout
 			android:id="@+id/registerBoxHeader"
-			android:layout_width="match_parent"
+			android:layout_width="0dp"
 			android:layout_height="wrap_content"
 			app:layout_constraintStart_toStartOf="parent"
-			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintEnd_toStartOf="@id/registerBoxForm"
 			app:layout_constraintTop_toTopOf="parent"
-			app:layout_constraintBottom_toTopOf="@id/registerBoxForm"
+			app:layout_constraintBottom_toBottomOf="@id/registerBoxDivider"
 	>
 		<TextView
 				android:id="@+id/registerTvTitulo"
@@ -34,6 +34,8 @@
 				android:id="@+id/registerSivImage"
 				android:layout_width="150dp"
 				android:layout_height="150dp"
+				app:strokeColor="@color/black"
+				app:strokeWidth="2sp"
 				app:layout_constraintStart_toStartOf="parent"
 				app:layout_constraintEnd_toEndOf="parent"
 				app:layout_constraintTop_toBottomOf="@id/registerTvTitulo"
@@ -43,13 +45,13 @@
 
 	<androidx.constraintlayout.widget.ConstraintLayout
 			android:id="@+id/registerBoxForm"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
+			android:layout_width="0dp"
+			android:layout_height="0dp"
 			android:layout_marginHorizontal="14dp"
-			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintStart_toEndOf="@id/registerBoxHeader"
 			app:layout_constraintEnd_toEndOf="parent"
-			app:layout_constraintTop_toBottomOf="@id/registerBoxHeader"
-			app:layout_constraintBottom_toTopOf="@id/registerBoxDivider"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintBottom_toBottomOf="parent"
 	>
 		<com.google.android.material.textfield.TextInputLayout
 				android:id="@+id/registerTilFullname"
@@ -112,8 +114,8 @@
 				android:id="@+id/registerBtnRegistrar"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
+				android:text="@string/loginBtnAcceder"
 				android:focusable="true"
-				android:text="@string/registerBtnRegistrar"
 				app:layout_constraintStart_toStartOf="parent"
 				app:layout_constraintEnd_toEndOf="parent"
 				app:layout_constraintTop_toBottomOf="@id/registerTilPassword"
@@ -124,12 +126,12 @@
 
 	<androidx.constraintlayout.widget.ConstraintLayout
 			android:id="@+id/registerBoxDivider"
-			android:layout_width="match_parent"
+			android:layout_width="0dp"
 			android:layout_height="wrap_content"
 			android:layout_marginHorizontal="14dp"
-			app:layout_constraintEnd_toStartOf="parent"
-			app:layout_constraintEnd_toEndOf="parent"
-			app:layout_constraintTop_toBottomOf="@id/registerBoxForm"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintEnd_toStartOf="@id/registerBoxForm"
+			app:layout_constraintTop_toBottomOf="@id/registerBoxHeader"
 			app:layout_constraintBottom_toTopOf="@id/registerBoxLinks"
 	>
 		<TextView
@@ -170,10 +172,10 @@
 
 	<androidx.constraintlayout.widget.ConstraintLayout
 			android:id="@+id/registerBoxLinks"
-			android:layout_width="match_parent"
+			android:layout_width="0dp"
 			android:layout_height="wrap_content"
 			app:layout_constraintStart_toStartOf="parent"
-			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintEnd_toStartOf="@id/registerBoxForm"
 			app:layout_constraintTop_toBottomOf="@id/registerBoxDivider"
 			app:layout_constraintBottom_toBottomOf="parent"
 	>

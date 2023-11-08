@@ -40,9 +40,13 @@ dependencies {
     var lottieVersion = "3.4.0"
     implementation("com.airbnb.android:lottie:$lottieVersion")
 
+    implementation("io.reactivex.rxjava3:rxjava:3.1.8")
+
     val room_version = "2.5.0"
     implementation("androidx.room:room-runtime:$room_version")
     annotationProcessor("androidx.room:room-compiler:$room_version")
+    implementation("androidx.room:room-rxjava3:$room_version")
+
 
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.9.0")
