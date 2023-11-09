@@ -2,26 +2,28 @@ package com.example.mystore.dbmanager.dao;
 
 import androidx.room.*;
 import com.example.mystore.dbmanager.entities.User;
+import io.reactivex.rxjava3.core.Completable;
+import io.reactivex.rxjava3.core.Single;
 
 import java.util.List;
 
 @Dao
 public interface UserDao {
     @Query( "SELECT * FROM users" )
-    public List<User> getAllUsers();
+    Single<List<User>> getAllUsers();
 
     @Query( "SELECT * FROM users WHERE user_id = :id" )
-    public User getUserById(int id);
+    Single<User> getUserById(int id);
 
     @Query( "SELECT user_id FROM users WHERE username = :username AND password = :password" )
-    public int loginUser( String username, String password );
+    Single<Integer> loginUser( String username, String password );
 
     @Insert
-    public void insertUser(User user);
+    Completable insertUser(User user);
 
     @Update
-    public void updateUser(User user);
+    Completable updateUser(User user);
 
     @Delete
-    public void deleteUser(User user);
+    Completable deleteUser(User user);
 }
