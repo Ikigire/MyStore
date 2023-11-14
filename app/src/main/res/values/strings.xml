@@ -24,4 +24,6 @@
     <string name="productListAlertDialogMessage">Está a punto de abandonar este lugar.\nSeleccione una opción.</string>
     <string name="productListAlertDialogNegativeButton">Cerrar sesión</string>
     <string name="productListAlertDialogPositiveButton">Cerrar app</string>
+	<string name="registerTvImgMessageActivo">Mantén presionado para borrar</string>
+    <string name="registerTvImgMessageInactivo">Presiona para seleccionar imagen</string>
 </resources>

@@ -34,10 +34,21 @@
 				android:id="@+id/registerSivImage"
 				android:layout_width="150dp"
 				android:layout_height="150dp"
+				app:srcCompat="@drawable/user_asset"
 				app:layout_constraintStart_toStartOf="parent"
 				app:layout_constraintEnd_toEndOf="parent"
 				app:layout_constraintTop_toBottomOf="@id/registerTvTitulo"
-				app:layout_constraintBottom_toBottomOf="parent"
+				app:layout_constraintBottom_toTopOf="@id/registerTvImgMessage"
+		/>
+		<TextView
+			android:id="@+id/registerTvImgMessage"
+			android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+			android:text="@string/registerTvImgMessageInactivo"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintTop_toBottomOf="@id/registerSivImage"
+			app:layout_constraintBottom_toBottomOf="parent"
 		/>
 	</androidx.constraintlayout.widget.ConstraintLayout>
 
