@@ -4,15 +4,21 @@ import android.net.Uri;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import com.example.mystore.R;
+import com.example.mystore.dbmanager.DBManager;
 import com.example.mystore.dbmanager.dao.UserDao;
 import com.example.mystore.dbmanager.entities.User;
 import com.google.android.material.imageview.ShapeableImageView;
 import com.google.android.material.textfield.TextInputLayout;
+import io.reactivex.rxjava3.annotations.NonNull;
+import io.reactivex.rxjava3.core.CompletableObserver;
+import io.reactivex.rxjava3.disposables.Disposable;
+import io.reactivex.rxjava3.schedulers.Schedulers;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -86,7 +92,47 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void onBtnRegistrarClick(View view) {
+        view.setEnabled(false);
+        String
+                fullname = tilFullname.getEditText().getText().toString(),
+                username = tilUsername.getEditText().getText().toString(),
+                password = tilPassword.getEditText().getText().toString();
 
-        finish();
+        fullname = fullname.trim();
+        username = username.trim();
+        password = password.trim();
+
+        if ( fullname.isEmpty() || username.isEmpty() || password.isEmpty() ) {
+            Toast.makeText(this, "Todos los campos son requeridos", Toast.LENGTH_SHORT).show();
+            view.setEnabled(true);
+            return;
+        }
+
+        newUser.setFullname(fullname);
+        newUser.setUsername(username);
+        newUser.setPassword(password);
+
+        userDao = DBManager.getDatabase( getApplicationContext() ).getUserDao();
+
+        userDao.insertUser(newUser)
+                //.observeOn(Schedulers.newThread())
+                .subscribe(new CompletableObserver() {
+                    @Override
+                    public void onSubscribe(@NonNull Disposable d) {
+                        Toast.makeText(RegisterActivity.this, "Insertando nuevo usuario", Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onComplete() {
+                        Toast.makeText(RegisterActivity.this, "Ahora puedes iniciar sesión", Toast.LENGTH_SHORT).show();
+                        finish();
+                    }
+
+                    @Override
+                    public void onError(@NonNull Throwable e) {
+                        Toast.makeText(RegisterActivity.this, "Mi primera chamba\n" + e.getMessage(), Toast.LENGTH_SHORT).show();
+                        view.setEnabled(true);
+                    }
+                });
     }
 }

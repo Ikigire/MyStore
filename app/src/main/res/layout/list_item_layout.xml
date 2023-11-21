@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content" xmlns:app="http://schemas.android.com/apk/res-auto">
+<com.google.android.material.imageview.ShapeableImageView
+		android:id="@+id/listItemProductImg"
+		android:layout_width="100dp"
+		android:layout_height="100dp"
+		app:srcCompat="@drawable/asset_product"
+		app:strokeWidth="2sp"
+		app:strokeColor="@color/black"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toStartOf="@id/listItemProductInfoBox"
+		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintBottom_toBottomOf="parent"
+		/>
+	<androidx.constraintlayout.widget.ConstraintLayout
+			android:id="@+id/listItemProductInfoBox"
+			android:layout_width="0dp"
+			android:layout_height="match_parent"
+			app:layout_constraintStart_toEndOf="@id/listItemProductImg"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintBottom_toBottomOf="parent"
+			>
+		<TextView
+				android:id="@+id/listItemTvProductName"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textSize="18sp"
+				android:textStyle="bold"
+				android:textAlignment="center"
+				android:text="Producto Mamalón"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintBottom_toTopOf="@id/listItemTvProductExistences"
+				/>
+		<TextView
+				android:id="@+id/listItemTvProductExistences"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textSize="14sp"
+				android:textAlignment="center"
+				android:text="200"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintTop_toBottomOf="@id/listItemTvProductName"
+				app:layout_constraintBottom_toTopOf="@id/listItemProductPrice"
+				/>
+		
+		<TextView
+				android:id="@+id/listItemProductPrice"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textSize="14sp"
+				android:textAlignment="center"
+				android:text="13.2"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintTop_toBottomOf="@id/listItemTvProductExistences"
+				app:layout_constraintBottom_toBottomOf="parent"
+				/>
+	</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
