@@ -3,8 +3,10 @@ package com.example.mystore;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.content.Intent;
+import android.view.WindowManager;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import androidx.appcompat.app.AppCompatDelegate;
 import com.airbnb.lottie.LottieAnimationView;
 import com.example.mystore.dbmanager.DBManager;
 import com.example.mystore.dbmanager.dao.UserDao;
@@ -23,6 +25,16 @@ public class SplashActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(
+                WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN
+        );
+
+        int themeToApply =
+                AppCompatDelegate.MODE_NIGHT_NO;
+
+        AppCompatDelegate.setDefaultNightMode(themeToApply);
+
         setContentView(R.layout.activity_splash);
 
         initComponents();

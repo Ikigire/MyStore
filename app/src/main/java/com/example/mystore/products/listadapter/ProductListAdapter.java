@@ -58,7 +58,7 @@ public class ProductListAdapter extends ArrayAdapter<Product> {
 
         tvProductName.setText(product.getName());
         tvProductExistences.setText( String.format("Exitencias: %d", product.getExistences()) );
-        tvProductPrice.setText( String.format("Precio: $%0.2f", product.getPrice()) );
+        tvProductPrice.setText( String.format("Precio: $%.2f", product.getPrice()) );
 
         return view;
     }
